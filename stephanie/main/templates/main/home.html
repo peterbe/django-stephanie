@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load thumbnail %}
+
+{% block content %}
+{% for artwork in artworks %}
+
+  {% if forloop.first %}
+  <!-- show the first big thumb here -->
+  <ul>
+  {% endif %}
+
+  {% thumbnail artwork.picture "800x600" as big %}
+  {% thumbnail artwork.picture "75x75" crop="center" as thumb %}
+  <li><a href="{{ big.url }}"><img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}"
+        alt="{{ artwork.title }}"></a></li>
+  {% endthumbnail %}
+  {% endthumbnail %}
+
+  {% if forloop.last %}
+  </ul>
+  {% endif %}
+
+
+{% endfor %}
+{% endblock %}
