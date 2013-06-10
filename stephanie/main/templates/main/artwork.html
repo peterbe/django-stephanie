@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% load thumbnail %}
+{% load extra_tags %}
+
+{% block title %}{{ artwork.title }} - {{ block.super }}{% endblock %}
+
+{% block extra_head %}
+  <meta property="og:title" content="{{ artwork.title }} - {{ PROJECT_TITLE }}">
+  {% thumbnail artwork.picture "200x200" crop="center" as thumb %}
+  <!-- make sure this is the absolute URL to the CDN -->
+  <meta property="og:image" content="{{ thumb.url }}">
+  {% endthumbnail %}
+  <meta property="og:url" content="{{ full_url }}">
+  <style type="text/css">
+  p.date { float: right; margin-right: 35px; margin-top: 25px;}
+  h2 { float: left; }
+  p.picture { text-align: center; }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+  {% thumbnail artwork.picture "800x600" as big %}
+  <p class="picture">
+    <img src="{{ big.url }}" width="{{ big.width }}" height="{{ big.height }}" alt="{{ artwork.title }}">
+  </p>
+  {% endthumbnail %}
+  <h2>{{ artwork.title }}</h2>
+  {% if artwork.created %}
+  <p class="date">{{ artwork.created }}</p>
+  {% endif %}
+
+  <br style="clear:both">
+
+  {% if artwork.description %}
+  <p class="description"><strong>Description.</strong> {{ artwork.description }}</p>
+  {% endif %}
+
+  {% if artwork.material %}
+  <p class="material"><strong>Material.</strong> {{ artwork.material }}</p>
+  {% endif %}
+
+  {% if artwork.size %}
+  <p class="size"><strong>Size.</strong> {{ artwork.size|show_size }}</p>
+  {% endif %}
+
+
+{% endblock %}

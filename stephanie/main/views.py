@@ -50,3 +50,12 @@ def contact(request):
     data['form'] = form
     data['sent'] = request.GET.get('sent')
     return render(request, 'main/contact.html', data)
+
+
+def artwork(request, slug):
+    data = {}
+    data['artwork'] = get_object_or_404(Artwork, slug__iexact=slug)
+    if data['artwork'].slug != slug:
+        return redirect('main:artwork', data['artwork'].slug)
+    data['full_url'] = request.build_absolute_uri()
+    return render(request, 'main/artwork.html', data)
