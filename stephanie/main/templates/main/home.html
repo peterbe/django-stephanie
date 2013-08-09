@@ -1,7 +1,60 @@
 {% extends 'main/base.html' %}
 {% load thumbnail %}
 
+{% block extra_head %}
+<style type="text/css">
+#thumbnails {
+    margin-top: 40px;
+}
+#thumbnails ul {
+    list-style-type: none;
+    overflow: auto;
+}
+#thumbnails ul li {
+    float: left;
+    margin-right: 20px;
+}
+</style>
+{% endblock %}
+
 {% block content %}
+
+<div id="carousel-example-generic" class="carousel slide" style="width:80%; margin:auto">
+  <!-- Indicators -->
+  <!--
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+  -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    {% for artwork in artworks %}
+    {% thumbnail artwork.picture "800x600" crop="center" as big %}
+    <div class="item {% if forloop.first %}active{% endif %}">
+      <img src="{{ big.url }}" alt="{{ artwork.title }}"
+           width="{{ big.width }}" height="{{ big.height }}">
+      <div class="carousel-caption">
+        <a href="{% url "main:artwork" artwork.slug %}">{{ artwork.title }}</a>
+      </div>
+    </div>
+    {% endthumbnail %}
+    {% endfor %}
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+</div>
+
+<div id="thumbnails" style="overflow: scroll">
+
 {% for artwork in artworks %}
 
   {% if forloop.first %}
@@ -9,13 +62,11 @@
   <ul>
   {% endif %}
 
-  {% thumbnail artwork.picture "800x600" as big %}
-  {% thumbnail artwork.picture "75x75" crop="center" as thumb %}
-  <li><a href="{{ big.url }}"><img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}"
+  {% thumbnail artwork.picture "50x50" crop="center" as thumb %}
+  <li><a href="{% url "main:artwork" artwork.slug %}" title="{{ artwork.title }}">
+  <img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}"
         alt="{{ artwork.title }}"></a>
-        <a href="{% url "main:artwork" artwork.slug %}">permalink</a>
         </li>
-  {% endthumbnail %}
   {% endthumbnail %}
 
   {% if forloop.last %}
@@ -24,4 +75,11 @@
 
 
 {% endfor %}
+
+</div>
+
+{% endblock %}
+
+{% block extrajs %}
+<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
 {% endblock %}
