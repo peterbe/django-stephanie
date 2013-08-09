@@ -53,9 +53,14 @@ def contact(request):
 
 
 def artwork(request, slug):
-    data = {}
-    data['artwork'] = get_object_or_404(Artwork, slug__iexact=slug)
-    if data['artwork'].slug != slug:
-        return redirect('main:artwork', data['artwork'].slug)
-    data['full_url'] = request.build_absolute_uri()
-    return render(request, 'main/artwork.html', data)
+    context = {}
+    context['artwork'] = get_object_or_404(Artwork, slug__iexact=slug)
+    if context['artwork'].slug != slug:
+        return redirect('main:artwork', context['artwork'].slug)
+    context['full_url'] = request.build_absolute_uri()
+    return render(request, 'main/artwork.html', context)
+
+
+def about(request):
+    context = {}
+    return render(request, 'main/about.html', context)

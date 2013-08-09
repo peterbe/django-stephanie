@@ -44,5 +44,10 @@
   <p class="size"><strong>Size.</strong> {{ artwork.size|show_size }}</p>
   {% endif %}
 
+  {% if artwork.commission %}
+  <p class="commission"><strong>Commission?</strong> <strong>Yes</strong>
+  {% if artwork.commission_notes %}{{ artwork.commission_notes }}{% endif %}
+  </p>
+  {% endif %}
 
 {% endblock %}

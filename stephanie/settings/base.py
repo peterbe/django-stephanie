@@ -124,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'stephanie.main',
     'sorl.thumbnail',
+    'bootstrapform',
 )
 
 # A sample logging configuration. The only tangible logging
