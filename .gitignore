@@ -1,1 +1,3 @@
 uploads/
+*.pyc
+*.DS_Store

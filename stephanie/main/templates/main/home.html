@@ -14,12 +14,39 @@
     float: left;
     margin-right: 20px;
 }
+
+.carousel-caption {
+  padding: 10px 0;
+  color: #000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.carousel-caption a {
+   color: #000;
+   z-index: 30;
+   position: relative;
+   text-shadow: none; 
+}
+
+.carousel-caption .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: #fff;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%; 
+  z-index: 1;  
+}
 </style>
 {% endblock %}
 
 {% block content %}
 
-<div id="carousel-example-generic" class="carousel slide" style="width:80%; margin:auto">
+<div id="carousel-example-generic" class="carousel slide" style="width:100%; margin:auto">
   <!-- Indicators -->
   <!--
   <ol class="carousel-indicators">
@@ -32,11 +59,12 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     {% for artwork in artworks %}
-    {% thumbnail artwork.picture "800x600" crop="center" as big %}
+    {% thumbnail artwork.picture "1000x600" crop="center" as big %}
     <div class="item {% if forloop.first %}active{% endif %}">
       <img src="{{ big.url }}" alt="{{ artwork.title }}"
            width="{{ big.width }}" height="{{ big.height }}">
       <div class="carousel-caption">
+        <span class="back"></span>
         <a href="{% url "main:artwork" artwork.slug %}">{{ artwork.title }}</a>
       </div>
     </div>
@@ -53,7 +81,7 @@
   </a>
 </div>
 
-<div id="thumbnails" style="overflow: scroll">
+<div id="thumbnails">
 
 {% for artwork in artworks %}
 
