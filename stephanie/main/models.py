@@ -73,8 +73,8 @@ add_introspection_rules([], ["^stephanie\.main\.models\.CentimeterSizeField"])
 
 class ArtGroup(models.Model):
     name = models.CharField(max_length=100)
-    #slug = models.SlugField(max_length=65, unique=True, db_index=True)
-    slug = models.SlugField(max_length=65, null=True, blank=True, db_index=True)
+    slug = models.SlugField(max_length=65, unique=True, db_index=True, default='')
+    #slug = models.SlugField(max_length=65, null=True, blank=True, db_index=True)
     modified = models.DateTimeField(default=now)
 
     def __unicode__(self):
