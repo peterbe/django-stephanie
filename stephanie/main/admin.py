@@ -34,6 +34,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ArtGroupAdmin(admin.ModelAdmin):
     list_display = ('name',)
+    exclude = ('modified',)
 
 
 class ContactAdmin(admin.ModelAdmin):
