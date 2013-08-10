@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load thumbnail %}
+
+{% block extra_head %}
+<style type="text/css">
+.artwork {
+    clear: left;
+    margin: 20px;
+    margin-bottom: 70px;
+}
+.artwork a.thumbnail {
+    float:left;
+}
+.artwork h3, .artwork p {
+    margin-left: 140px;
+}
+</style>
+{% endblock %}
+
+{% block title %}{{ group.name }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<h2>{{ group.name }}</h2>
+
+{% for artwork in artworks %}
+<div class="artwork">
+{% thumbnail artwork.picture "100x100" crop="center" as thumb %}
+  <a href="{% url "main:artwork" artwork.slug %}" class="thumbnail" title="{{ artwork.title }}"
+   ><img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ artwork.title }}"></a>
+  <h3>{{ artwork.title }}</h3>
+  <p>Added {{ artwork.added|timesince }} ago</p>
+  <p>{{ artwork.material }}</p>
+{% endthumbnail %}
+</div>
+{% endfor %}
+
+{% endblock %}
