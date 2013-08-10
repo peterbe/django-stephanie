@@ -1,18 +1,29 @@
 body {
     margin: 0;
-    background-color: rgb(234, 233, 230);
+    background: url('/static/main/images/dimension.png') repeat top left rgb(234, 233, 230);
 }
 
 .container {
     width: 66%;
+    padding: 2% 3%;
     max-width: 1000px;
     margin: 0px auto;
     background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 30px #999;
+    min-height: 100%;
 }
 
 .header {
     width: auto;
-    margin: 6px 0px;
+    margin: 0px 0px;
+    border-bottom: 1px dashed #e1e1e1;
+}
+
+.header h1 {
+  margin: 0 0 10px 0;   
+  width: 100%;
+  text-align: center;
+  font-weight: 100;
 }
 
 .content {
@@ -51,17 +62,16 @@ body {
 }
 
 .header ul {
-    float: left;
     list-style-type: none;
+    text-align: center;
     padding: 0px;
-    margin: 0px 0px 10px 25px;
+    margin: 0px 0px 30px 0px;
 }
 
 .header ul li {
-    float: left;
-    position: relative;
-    line-height: 20px;
-    margin-right: 15px;
+    display: inline-table;
+    margin: 0 15px 0 15px;
+    font-weight: bold;
 }
 
 .header li a {

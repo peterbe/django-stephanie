@@ -1,3 +1,4 @@
 django
 pillow
 sorl-thumbnail
+django-bootstrap-form
