@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'stephanie.main',
     'sorl.thumbnail',
     'bootstrapform',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
