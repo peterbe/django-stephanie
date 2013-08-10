@@ -15,4 +15,6 @@ urlpatterns = patterns(
         name='about'),
     url(r'^artwork/(?P<slug>[-\w]+)$', views.artwork,
         name='artwork'),
+    url(r'^(?P<slug>[-\w]+)/$', views.artgroup,
+        name='artgroup'),
 )
