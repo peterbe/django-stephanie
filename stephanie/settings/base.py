@@ -172,4 +172,4 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'stephanie.main.context_processors.base',
 )
 
-WEBMASTER_FROM = u'%s <mail@stephanie.com>' % PROJECT_TITLE
+WEBMASTER_FROM = u'%s <mail@skmueller.com>' % PROJECT_TITLE
