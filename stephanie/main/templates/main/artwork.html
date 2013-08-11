@@ -12,15 +12,16 @@
   {% endthumbnail %}
   <meta property="og:url" content="{{ full_url }}">
   <style type="text/css">
-  p.date { float: left; margin-right: 0px; margin-bottom: 20px; font-size: 20px;color: #999}
+  /*p.date { float: right; margin-right: 0px; margin-bottom: 20px; font-size: 20px;color: #999}*/
+  span.date { padding-left: 20px; color: #999; font-size:70%; }
   h2 { float: left; }
   p.picture { text-align: center; }
   p.picture img {
   }
-  
-  
+
+
   p.description, p.material, p.size, p.commission {
-    padding-right: 300px; 
+    padding-right: 300px;
   }
   </style>
 {% endblock %}
@@ -32,11 +33,12 @@
     <img src="{{ big.url }}" width="{{ big.width }}" height="{{ big.height }}" alt="{{ artwork.title }}">
   </p>
   {% endthumbnail %}
-  <h2>{{ artwork.title }}</h2>
-  {% if artwork.created %}
-  <p class="date">{{ artwork.created }}</p>
-  {% endif %}
+  <h2>{{ artwork.title }}
 
+  {% if artwork.created %}
+  <span class="date">{{ artwork.created }}</span>
+  {% endif %}
+  </h2>
   <br style="clear:both">
 
   {% if artwork.description %}
