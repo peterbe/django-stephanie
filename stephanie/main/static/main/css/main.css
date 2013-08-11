@@ -79,21 +79,21 @@ body {
 }
 
 .header li a.red {
-  color: red;   
+  color: #bc4242;   
 }
 
 .header li a.yellow {
-  color: yellow;   
+  color: #bcb242;   
 }
 
 .header li a.blue {
-  color: blue;   
+  color: #81a5b9;   
 }
 
 .header li a.green {
-  color: green;   
+  color: #81b98e;   
 }
 
 .header li a.pink {
-  color: pink;   
+  color: #e67bce;   
 }
