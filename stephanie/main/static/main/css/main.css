@@ -77,3 +77,23 @@ body {
 .header li a {
     text-transform: uppercase;
 }
+
+.header li a.red {
+  color: red;   
+}
+
+.header li a.yellow {
+  color: yellow;   
+}
+
+.header li a.blue {
+  color: blue;   
+}
+
+.header li a.green {
+  color: green;   
+}
+
+.header li a.pink {
+  color: pink;   
+}

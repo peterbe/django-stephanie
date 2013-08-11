@@ -61,7 +61,7 @@ MEDIA_URL = '/cache/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = 'static'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'stephanie.main',
     'sorl.thumbnail',
     'bootstrapform',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -172,4 +173,4 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'stephanie.main.context_processors.base',
 )
 
-WEBMASTER_FROM = u'%s <mail@stephanie.com>' % PROJECT_TITLE
+WEBMASTER_FROM = u'%s <mail@skmueller.com>' % PROJECT_TITLE

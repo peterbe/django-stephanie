@@ -1,3 +1,6 @@
 uploads/
 *.pyc
 *.DS_Store
+/static/
+stephanie/settings/local.py
+

@@ -9,6 +9,7 @@ class SizeInput(forms.widgets.TextInput):
     def render(self, name, value, attrs=None):
         if value:
             value = ' x '.join(str(x) for x in value)
+            value += ' cm'
         return super(SizeInput, self).render(name, value, attrs=attrs)
 
 
@@ -24,6 +25,7 @@ class ArtworkAdminForm(forms.ModelForm):
 class ArtworkAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'modified')
     form = ArtworkAdminForm
+    exclude = ('added', 'modified')
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -32,6 +34,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ArtGroupAdmin(admin.ModelAdmin):
     list_display = ('name',)
+    exclude = ('modified',)
 
 
 class ContactAdmin(admin.ModelAdmin):

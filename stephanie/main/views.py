@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse
 
 from sorl.thumbnail import get_thumbnail
 
-from .models import Category, Artwork
+from .models import Category, Artwork, ArtGroup
 from . import forms
 
 
@@ -64,3 +64,13 @@ def artwork(request, slug):
 def about(request):
     context = {}
     return render(request, 'main/about.html', context)
+
+
+def artgroup(request, slug):
+    group = get_object_or_404(ArtGroup, slug=slug)
+    context = {
+        'group': group,
+        'artworks': Artwork.objects.filter(group=group).order_by('-added')
+    }
+
+    return render(request, 'main/artgroup.html', context)
