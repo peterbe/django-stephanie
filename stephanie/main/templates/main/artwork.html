@@ -12,20 +12,22 @@
   {% endthumbnail %}
   <meta property="og:url" content="{{ full_url }}">
   <style type="text/css">
-  p.date { float: right; margin-right: 35px; margin-top: 25px;}
+  p.date { float: left; margin-right: 0px; margin-bottom: 20px; font-size: 20px;color: #999}
   h2 { float: left; }
   p.picture { text-align: center; }
   p.picture img {
-    border: 1px solid rgb(221, 221, 221);
-    border-radius: 4px 4px 4px 4px;
-    padding: 4px;
+  }
+  
+  
+  p.description, p.material, p.size, p.commission {
+    padding-right: 300px; 
   }
   </style>
 {% endblock %}
 
 {% block content %}
 
-  {% thumbnail artwork.picture "800x600" as big %}
+  {% thumbnail artwork.picture "1000x600" as big %}
   <p class="picture">
     <img src="{{ big.url }}" width="{{ big.width }}" height="{{ big.height }}" alt="{{ artwork.title }}">
   </p>

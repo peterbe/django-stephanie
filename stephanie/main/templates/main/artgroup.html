@@ -5,7 +5,7 @@
 <style type="text/css">
 .artwork {
     clear: left;
-    margin: 20px;
+    margin: 0px;
     margin-bottom: 70px;
 }
 .artwork a.thumbnail {
@@ -14,6 +14,13 @@
 .artwork h3, .artwork p {
     margin-left: 140px;
 }
+
+.thumbnail, .img-thumbnail {
+  border: none;
+  padding: none;
+  margin-right: 20px;   
+}
+
 </style>
 {% endblock %}
 
@@ -25,7 +32,7 @@
 
 {% for artwork in artworks %}
 <div class="artwork">
-{% thumbnail artwork.picture "100x100" crop="center" as thumb %}
+{% thumbnail artwork.picture "300x150" crop="center" as thumb %}
   <a href="{% url "main:artwork" artwork.slug %}" class="thumbnail" title="{{ artwork.title }}"
    ><img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ artwork.title }}"></a>
   <h3>{{ artwork.title }}</h3>

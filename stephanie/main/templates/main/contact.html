@@ -2,6 +2,33 @@
 
 {% load bootstrap %}
 
+{% block extra_head %}
+<style type="text/css">
+
+input, textarea {
+  border: 1px solid #e1e1e1;
+  padding: 5px;   
+}
+
+.control-group {
+  float: left;
+  margin: 0 0 10px 0;
+  width: 100%;   
+}
+
+.intro {
+ padding-right: 150px;
+ margin-bottom: 20px;
+}
+
+form {
+  float: left;
+  width: 500px;   
+}
+
+</style>
+{% endblock %}
+
 {% block content %}
 
 <h2>Contact</h2>
@@ -14,10 +41,14 @@
   </div>
 {% endif %}
 
+<div class="intro">
+    <p>Use this form to get in touch with me - I'm available for all types of commissions, or to discuss sales of any works. Or maybe you just want to chat.</p>
+</div>
+
 <form action="" method="post">{% csrf_token %}
 {{ form|bootstrap }}
 <div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </div>
 </form>
 
