@@ -20,7 +20,7 @@ body {
 }
 
 .header h1 {
-  margin: 0 0 10px 0;   
+  margin: 0 0 10px 0;
   width: 100%;
   text-align: center;
   font-weight: 100;
@@ -81,23 +81,23 @@ body {
 }
 
 .header li a.red {
-  color: #bc4242;   
+  color: #bc4242;
 }
 
 .header li a.yellow {
-  color: #bcb242;   
+  color: #bcb242;
 }
 
 .header li a.blue {
-  color: #81a5b9;   
+  color: #81a5b9;
 }
 
 .header li a.green {
-  color: #81b98e;   
+  color: #81b98e;
 }
 
 .header li a.pink {
-  color: #e67bce;   
+  color: #e67bce;
 }
 
 #overlay {
@@ -106,8 +106,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  display: none; 
-  z-index: 2;  
+  display: none;
+  z-index: 2;
 }
 
 #overlay-back {
@@ -116,11 +116,11 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #fff;    
+  background: #fff;
 }
 
 #overlay-inner {
-  width: 60%; 
+  width: 60%;
   height: 60%;
   min-width: 400px;
   max-width: 1000px;
@@ -129,4 +129,19 @@ body {
   margin: auto;
   position: fixed;
   top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/* mobile first */
+.container {
+  width: 100%;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  /* desktop */
+
+  .container {
+    width: 66%;
+  }
 }

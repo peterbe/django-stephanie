@@ -1,10 +1,16 @@
 {% extends 'main/base.html' %}
 {% block extra_head %}
 <style type="text/css">
-.content-inner img {
-    float: right;
-    margin: 0 80px 80px 80px;
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  /* desktop */
+  .content-inner img {
+      float: right;
+      margin: 0 80px 80px 80px;
+  }
 }
+
 </style>
 {% endblock %}
 {% block content %}
