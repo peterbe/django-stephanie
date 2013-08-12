@@ -5,9 +5,20 @@
 {% block extra_head %}
 <style type="text/css">
 
+label {
+  margin-bottom: 2px;   
+}
+
 input, textarea {
   border: 1px solid #e1e1e1;
   padding: 5px;   
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+input:focus, textarea:focus {
+  border-color: #81b98e;
+  box-shadow: inset 0 1px 2px #c2e2c9;   
 }
 
 .control-group {

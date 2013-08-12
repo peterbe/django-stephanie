@@ -15,7 +15,7 @@
   /*p.date { float: right; margin-right: 0px; margin-bottom: 20px; font-size: 20px;color: #999}*/
   span.date { padding-left: 20px; color: #999; font-size:70%; }
   h2 { float: left; }
-  p.picture { text-align: center; }
+  p.picture { text-align: center; position: relative; }
   p.picture img {
   }
 
@@ -23,13 +23,71 @@
   p.description, p.material, p.size, p.commission {
     padding-right: 300px;
   }
+  
+  #zen {
+    float: right;
+    position: absolute;
+    right: 0;
+    background:#fff;
+    opacity: 0;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    padding: 10px; 
+    font-weight: bold;
+    text-transform: lowercase;
+    color: #333;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    background: url('/static/main/images/expand.png') no-repeat 8px 8px #fff;
+    text-indent: -3000em;
+    border-radius: 0 0 0 5px;
+  }
+  
+  p.picture:hover #zen {
+    opacity: 0.4; 
+  }
+  
+  p.picture #zen:hover {
+    opacity: 0.6;
+    text-decoration: none; 
+  }
   </style>
+ 
+{% endblock %}
+
+{% block extrajs %}
+  <script type="text/javascript">
+    $('#zen').bind('click', function() {
+        
+        $('body').append('<div id="overlay"><div id="overlay-back"></div><div id="overlay-inner"></div></div>');
+        var thisImg = $('p.picture img');
+        $('#overlay-inner').append($('p.picture').html());
+        $('#overlay #zen').fadeOut();
+        $('#overlay-inner').css({
+            'height': thisImg.attr('height'),
+            'width': thisImg.attr('width'),    
+        });
+        $('#overlay').fadeIn(300);
+        
+        $('#overlay-back').click(hideOverlay);
+        return false;
+    });
+    
+    function hideOverlay(e) {
+      $('#overlay').fadeOut(400).delay(400).queue( function() {
+            $('#overlay').remove();
+      });
+      e.stopPropagation();   
+    }
+  </script>
 {% endblock %}
 
 {% block content %}
 
   {% thumbnail artwork.picture "1000x600" as big %}
   <p class="picture">
+    <a href="" id="zen" title="Click to go Zen">Zen</a>
     <img src="{{ big.url }}" width="{{ big.width }}" height="{{ big.height }}" alt="{{ artwork.title }}">
   </p>
   {% endthumbnail %}
