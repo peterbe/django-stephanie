@@ -63,7 +63,6 @@ class CentimeterSizeField(models.CharField):
         return [int(x) for x in value.split('x') if x.strip()]
 
     def get_prep_value(self, value):
-        print "vALUE", repr(value)
         return 'x'.join(str(x) for x in value)
 
 
