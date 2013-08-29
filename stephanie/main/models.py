@@ -29,8 +29,9 @@ def _upload_path(tag):
         hashed_filename = (hashlib.md5(filename +
                            str(now.microsecond)).hexdigest())
         __, extension = os.path.splitext(filename)
-        root = settings.MEDIA_ROOT
-        return os.path.join(root, tag, path, hashed_filename + extension)
+        #root = settings.MEDIA_ROOT
+        #return os.path.join(root, tag, path, hashed_filename + extension)
+        return os.path.join(tag, path, hashed_filename + extension)
     return _upload_path_tagged
 
 
