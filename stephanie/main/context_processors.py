@@ -12,7 +12,7 @@ def base(request):
         {'url': reverse('main:home'), 'title': 'Home'},
         {'url': reverse('main:artgroup', args=('drawings',)), 'title': 'Drawings'},
         {'url': reverse('main:artgroup', args=('photography',)), 'title': 'Photography'},
-        #{'url': '/photography', 'title': 'Photography'},
+        {'url': reverse('main:artgroup', args=('paintings',)), 'title': 'Paintings'},
         {'url': reverse('main:about'), 'title': 'About'},
         {'url': reverse('main:contact'), 'title': 'Contact'},
     ]

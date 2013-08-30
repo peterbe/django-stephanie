@@ -14,17 +14,17 @@
 
         <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="{{ STATIC_URL }}main/css/main.css" rel="stylesheet" type="text/css">
-        
+
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-        
+
         <style type="text/css">
             body, h1, h2, h3, #zen {
-               font-family: 'Raleway', sans-serif;   
+               font-family: 'Raleway', sans-serif;
             }
-            
-            
+
+
         </style>
-        
+
         {% block extra_head %}
         {% endblock %}
     <body>
@@ -36,7 +36,7 @@
             <div>
             <ul>
               {% for nav in navs %}
-              <li><a href="{{ nav.url }}" class="{% if nav.active %}active{% endif %} {% cycle 'red' 'blue' 'green' 'pink' 'yellow' %}">{{ nav.title }}</a></li>
+              <li><a href="{{ nav.url }}" class="{% if nav.active %}active{% endif %} {% cycle 'red' 'blue' 'green' 'maroon' 'pink' 'yellow' %}">{{ nav.title }}</a></li>
               {% endfor %}
             </ul>
             </div>

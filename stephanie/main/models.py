@@ -59,11 +59,14 @@ class CentimeterSizeField(models.CharField):
             return value
         if value is None:
             return None
-        #raise Exception(value)
+        if value == '[]':  # an old bug
+            return None
         value = value.replace('cm', '')
         return [int(x) for x in value.split('x') if x.strip()]
 
     def get_prep_value(self, value):
+        if value is None:
+            return ''
         return 'x'.join(str(x) for x in value)
 
 
