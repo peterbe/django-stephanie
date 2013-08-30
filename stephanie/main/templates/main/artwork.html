@@ -6,9 +6,11 @@
 
 {% block extra_head %}
   <meta property="og:title" content="{{ artwork.title }} - {{ PROJECT_TITLE }}">
-  {% thumbnail artwork.picture "200x200" crop="center" as thumb %}
+  {% thumbnail artwork.picture "300x300" crop="center" as thumb %}
   <!-- make sure this is the absolute URL to the CDN -->
-  <meta property="og:image" content="{{ thumb.url }}">
+  <meta property="og:image" content="{{ root_url }}{{ thumb.url }}">
+  <meta property="og:image:width" content="{{ thumb.width }}">
+  <meta property="og:image:height" content="{{ thumb.height }}">
   {% endthumbnail %}
   <meta property="og:url" content="{{ full_url }}">
   <style type="text/css">

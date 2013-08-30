@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import send_mail
 from django.conf import settings
 from django.core.urlresolvers import reverse
+from django.contrib.sites.models import RequestSite
 
 from sorl.thumbnail import get_thumbnail
 
@@ -58,6 +59,7 @@ def artwork(request, slug):
     if context['artwork'].slug != slug:
         return redirect('main:artwork', context['artwork'].slug)
     context['full_url'] = request.build_absolute_uri()
+    context['root_url'] = 'http://%s' % RequestSite(request).domain
     return render(request, 'main/artwork.html', context)
 
 
