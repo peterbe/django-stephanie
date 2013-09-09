@@ -6,6 +6,7 @@ def base(request):
     data = {
         'PROJECT_TITLE': settings.PROJECT_TITLE,
         'PROJECT_DESCRIPTION': settings.PROJECT_DESCRIPTION,
+        'GOOGLE_ANALYTICS': getattr(settings, 'GOOGLE_ANALYTICS', not settings.DEBUG),
     }
 
     navs = [
