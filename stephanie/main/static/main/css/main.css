@@ -78,6 +78,7 @@ body {
 
 .header li a {
     text-transform: uppercase;
+    color: rgb(93, 102, 84);
 }
 
 .header li a.red {

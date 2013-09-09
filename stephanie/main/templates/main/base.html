@@ -36,7 +36,7 @@
             <div>
             <ul>
               {% for nav in navs %}
-              <li><a href="{{ nav.url }}" class="{% if nav.active %}active{% endif %} {% cycle 'red' 'blue' 'green' 'maroon' 'pink' 'yellow' %}">{{ nav.title }}</a></li>
+              <li><a href="{{ nav.url }}" class="{% if nav.active %}active{% endif %} {#{% cycle 'red' 'blue' 'green' 'maroon' 'pink' 'yellow' %}#}">{{ nav.title }}</a></li>
               {% endfor %}
             </ul>
             </div>
