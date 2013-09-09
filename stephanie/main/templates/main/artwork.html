@@ -45,7 +45,7 @@
     color: #333;
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
-    background: url('{{ STATIC_URL }}/main/images/expand.png') no-repeat 8px 8px #fff;
+    background: url('{{ STATIC_URL }}main/images/expand.png') no-repeat 8px 8px #fff;
     text-indent: -3000em;
     border-radius: 0 0 0 5px;
   }
@@ -94,7 +94,7 @@
   {% thumbnail artwork.picture "1000x600" as big %}
   <p class="picture">
     <a href="" id="zen" title="Click to go Zen">Zen</a>
-    <img src="{{ STATIC_URL }}{{ big.url }}" width="{{ big.width }}" height="{{ big.height }}" alt="{{ artwork.title }}">
+    <img src="{{ big.url }}" width="{{ big.width }}" height="{{ big.height }}" alt="{{ artwork.title }}">
   </p>
   {% endthumbnail %}
   <h2>{{ artwork.title }}</h2>

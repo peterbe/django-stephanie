@@ -37,7 +37,7 @@ DATABASES = {
 
 #INSTALLED_APPS = base.INSTALLED_APPS + ('gunicorn',)
 
-#STATIC_URL = '//cdn.peterbecom'
+#STATIC_URL = '//cdn.peterbecom/'
 
 
 #import logging
