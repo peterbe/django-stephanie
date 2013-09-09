@@ -1,54 +1,41 @@
 {% extends 'main/base.html' %}
 {% block extra_head %}
 <style type="text/css">
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-  /* desktop */
-  .content-inner img {
-      float: right;
-      margin: 0 80px 80px 80px;
-  }
+.content-inner img.mug {
+    float: right;
+    margin: 0 80px 80px 80px;
 }
-
 </style>
 {% endblock %}
 {% block content %}
 
 <h2>About</h2>
 
-<img style="float:right" src="{{ STATIC_URL }}main/images/mug.jpg" alt="This is what I look like">
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting
-industry. Lorem Ipsum has been the industry's standard dummy text ever
-since the 1500s, when an unknown printer took a galley of type and
-scrambled it to make a type specimen book. It has survived not only
-five centuries, but also the leap into electronic typesetting,
-remaining essentially unchanged. It was popularised in the 1960s with
-the release of Letraset sheets containing Lorem Ipsum passages, and
-more recently with desktop publishing software like Aldus PageMaker
-including versions of Lorem Ipsum.</p>
+<img class="mug" src="{{ STATIC_URL }}main/images/stephanie.jpg" alt="Stephanie Kearly Müller">
 
-<p>It is a long established fact that a reader will be distracted by the
-readable content of a page when looking at its layout. The point of
-using Lorem Ipsum is that it has a more-or-less normal distribution of
-letters, as opposed to using 'Content here, content here', making it
-look like readable English. Many desktop publishing packages and web
-page editors now use Lorem Ipsum as their default model text, and a
-search for 'lorem ipsum' will uncover many web sites still in their
-infancy. Various versions have evolved over the years, sometimes by
-accident, sometimes on purpose (injected humour and the like).</p>
+<p>
+Stephanie Kearley Müller is an artist from Louisiana, USA, living in
+Germany. Having acquired a Bachelor of Fine Arts Degree from Louisiana
+Tech University in 2008, she continues to produce artwork while
+pursuing a Master's degree at the Pädagogische Hochschule in
+Karlsruhe.
+</p>
 
-<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It
-has roots in a piece of classical Latin literature from 45 BC, making
-it over 2000 years old. Richard McClintock, a Latin professor at
-Hampden-Sydney College in Virginia, looked up one of the more obscure
-Latin words, consectetur, from a Lorem Ipsum passage, and going
-through the cites of the word in classical literature, discovered the
-undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
-Evil) by Cicero, written in 45 BC. This book is a treatise on the
-theory of ethics, very popular during the Renaissance. The first line
-of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-section 1.10.32.</p>
+<p>
+As a child she was raised in a strict Protestant household but was
+greatly influenced by the colorful and unique Louisiana lifestyle. In
+2008, she moved to China, which is where she met her Russian husband,
+and in 2010, she moved to Germany, learned the language and continued
+her education.
+</p>
+
+<p>
+This mixed background inspires her artwork, which primarily consists
+of figurative oil paintings that express her exploration of culture,
+spirituality, and innocence. Full of rich colors and patterns, her
+paintings illustrate the collision of worlds that she experiences
+everyday and are her way of trying to figure out where she belongs in
+a world that is much more complex than she originally thought.
+</p>
 
 {% endblock %}
