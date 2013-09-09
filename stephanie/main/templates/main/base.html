@@ -12,17 +12,15 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="{{ STATIC_URL }}main/css/main.css" rel="stylesheet" type="text/css">
+        <link href="{{ STATIC_URL }}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="{{ STATIC_URL }}/main/css/main.css" rel="stylesheet" type="text/css">
 
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
 
         <style type="text/css">
             body, h1, h2, h3, #zen {
                font-family: 'Raleway', sans-serif;
             }
-
-
         </style>
 
         {% block extra_head %}
@@ -58,7 +56,7 @@
         </div>
         {% endblock %}
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}main/js/jquery-1.10.2.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}/main/js/jquery-1.10.2.min.js"><\/script>')</script>
 	<!--
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
