@@ -1,4 +1,5 @@
 from django import template
+from django.conf import settings
 from django.utils.safestring import mark_safe
 
 register = template.Library()
@@ -46,3 +47,10 @@ def show_size(size, as_plain_text=False):
          dict(first=' x '.join(first),
               second=' x '.join(second))
     ))
+
+
+@register.filter
+def static_url(url):
+    if url.startswith('/') and not url.startswith('//'):
+        url = url[1:]
+    return settings.STATIC_URL + url
